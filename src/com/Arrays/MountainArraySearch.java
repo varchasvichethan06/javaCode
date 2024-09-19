@@ -36,12 +36,12 @@ public class MountainArraySearch {
                 start = mid + 1;            // when a[mid] < a[mid+1]
             }
         }
-        return arr[start];
+        return start;
     }
 
 
     static int searchInMountain(int[] arr,int target){
-        int peak;  // here peak is the actual value not the index
+        int peak;  // here peak is the index
         peak = findPeak(arr);
         int firstTry = binarySearch(arr,target,0,peak);
         if(firstTry != -1){             // when we found the element in the left hand side only
