@@ -1,0 +1,24 @@
+To find number of digits -> Math.log10(num) + 1
+
+To split the numbers ->  while(num > 0) { rem = num % 10; num = num / 10; }
+
+To reverse digits of a num -> while(num > 0) { rem = num % 10; num = num / 10; revnum = revnum*10 + rem; }
+
+To convert string to chararray -> str.toCharArray()
+
+To print the converted char array -> System.out.println(Arrays.toString(str.toCharArray()));
+
+To Concate same array twice
+System.arraycopy(source_arr,src_pos,dest_arr,dest_pos,length)
+
+To sort an array
+Arrays.sort(<array name>);
+
+to sort an  array in reverse order
+Arrays.sort(arr , Collections.reverseOrder());
+
+to sort a list of integers
+Collections.sort(list);
+
+to sort a list in reverse order
+Collections.sort(list , collections.reverseOrder());
