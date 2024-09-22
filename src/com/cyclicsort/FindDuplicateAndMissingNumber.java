@@ -1,10 +1,9 @@
 package com.cyclicsort;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class MissingNumbersIn1toN {
+public class FindDuplicateAndMissingNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter the size of array");
@@ -17,22 +16,21 @@ public class MissingNumbersIn1toN {
         }
 
         cyclicSort1toN(arr);
-        List<Integer> missNums = new ArrayList<Integer>();
-        missNums = missingNumbers(arr);
-        System.out.println(missNums);
+        int[] ans = returnNums(arr);
+        System.out.println(Arrays.toString(ans));
+
+
     }
 
-
-    static List<Integer> missingNumbers(int[] arr){   // this is for 1 to N
-        List<Integer> ans = new ArrayList<Integer>();
-        for (int i = 0; i < arr.length ; i++) {
-            if(arr[i] != i + 1){                // only this part will change if 0 to N --> arr[i] != i
-                ans.add(i + 1);                 // ans.add(i)
+    static int[] returnNums(int[] arr){
+        // this will return only the first duplicate , if you want all duplicates to be printed then  use List and add them
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] != i + 1){
+                return new int[]{ arr[i], i + 1 };    //returning the duplicate value first and then the missing value
             }
         }
-        return ans;
+        return new int[]{ -1 ,-1 };
     }
-
 
     static void cyclicSort1toN(int[] arr){
         int i = 0;

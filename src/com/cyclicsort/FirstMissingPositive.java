@@ -33,7 +33,7 @@ public class FirstMissingPositive {
         for (int i = 0; i < n ; i++) {
             arr[i] = sc.nextInt();
         }
-        cyclicsort1toN(arr);
+        cyclicSort1toN(arr);
         int ans = missingFirstPos(arr);
         System.out.println(ans);
     }
@@ -49,7 +49,7 @@ public class FirstMissingPositive {
                                 //                          will be the next positive missing no
     }
 
-    static void cyclicsort1toN(int[] arr){
+    static void cyclicSort1toN(int[] arr){
         int i = 0;
         while(i < arr.length){
             int correct_index = arr[i] - 1; // we are using the concept of indices here

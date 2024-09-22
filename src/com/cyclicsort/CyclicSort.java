@@ -22,11 +22,11 @@ public class CyclicSort {
             arr[i] = sc.nextInt();
         }
 
-        cyclicsort0toN(arr);
+        cyclicSort0toN(arr);
         System.out.println(Arrays.toString(arr));
     }
 
-    static void cyclicsort1toN(int[] arr){
+    static void cyclicSort1toN(int[] arr){
         int i = 0;
         while(i < arr.length){
             int correct_index = arr[i] - 1; // we are using the concept of indices here
@@ -40,7 +40,7 @@ public class CyclicSort {
     }
 
 
-    static void cyclicsort0toN(int[] arr){
+    static void cyclicSort0toN(int[] arr){
         int i = 0;
         while(i < arr.length){
             int correct_index = arr[i] ; //so the range is from 0 to n , as we know index also starts from 0 to N
