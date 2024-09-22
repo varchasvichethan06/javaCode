@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MissNumbersIn1toN {
+public class MissingNumbersIn1toN {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter the size of array");
