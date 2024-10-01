@@ -1,0 +1,30 @@
+Recursion is nothing but a function calling itself
+1. A recursive function always should have a base condition ( the condition when met , the fucntion will stop calling itself)
+    if no base condition , then the fuction will keep calling itself as we know each fun call will occupy memory then
+    memory exceeds the limit ----> StackOverFlow error
+2. Whenever a function call is made , even though it's the same function each function call will accumulate memory in stack
+3. Once the function call returns to the point where the function call was made , the function call will be popped from stack
+4. Until the function executes , the function which called it will also wait in the stack
+
+
+WHYYYYY ? 1.it helps us to solve complex problems easily
+          2.Recursion solution can be converted into iteration vise versa
+          3. Space complexity is not constant , as func call occupy memory but iteration can be done in constant space
+          4.It helps us in breaking big problems to small problem
+
+
+When you write the recursion in a formula it means recurrence relation
+
+
+How to understand and approach a problem :
+1.Identify if you can break down problem into small problems
+2.Try forming a recurrence relation if needed
+3.Draw the recursive tree
+4. About the tree:
+        1. See the flow of functions , how they getting in stack
+        2. Identify and focus on left tree calls and right tree calls
+        3. Draw the tree and pointers on pen and paper
+        4. Try debugging the code to understand
+5. See how the values are returned for a function call
+
+

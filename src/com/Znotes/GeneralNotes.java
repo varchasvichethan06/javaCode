@@ -1,4 +1,4 @@
-package com.notes;
+package com.Znotes;
 
 
  /*
@@ -105,4 +105,18 @@ so when we won't know the number of args to be passed we use this
  /*
 it can be String ...v as well. basically this will get converted into Array of int / Strings
 to print System.out.println(com.Arrays.toString(v));
+ */
+
+
+
+/*
+memory management
+
+Primitive data types will have both ref and value stored in stack memory
+Non-primitive object ref will be in stack
+objects will be in heap
+function calls will be in stack
+String pool will be in heap -> immutable
+StringBuilder will be in heap outside pool -> mutable
+
  */

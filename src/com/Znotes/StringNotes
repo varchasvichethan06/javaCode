@@ -1,0 +1,106 @@
+Strings are immutable , but can point to a different object
+eg -> String a = "Cherry";
+a = "Achal";     is possible
+
+
+
+Like objects are stored in the heap , string objects are stored in heap with a concept called String pool
+    Stack                 Heap
+|        |          |------------|
+|        |          |    Pool    |
+                    |  |------|  |
+|        |          |  |cherry|  |
+|___a____|          |  | achal|  |
+                    |  |------|  |
+
+ initially a will point to cherry then achal
+
+
+ We can't modify string objects
+
+ Strings comparison  s1 = "cherry" s2 = "cherry"
+ 1. s1 == s2 ----> may be false or might be true (as it'll check object ref)  checks if ref variable is pointing to same obj
+ 2. s1.equals(s2) ----> True only ( as it's checking val)
+ 3. s1.toCompare(s2) -----> if s1's length < s2 then returns -ve  , if s1's length is same then returns 0 , if s1>s2 +ve
+
+
+ How to create diff objects of same value:
+ String a = new String("Cherry");
+ String b = new String("Cherry");
+ It's creating new object in the heap outside the string pool ,
+ i) then == (comparator) will return false
+ ii) a.equals(b) will return true , but if b = "Cherry  " , then a.equals(b) will return false as new spaces are added
+
+
+ To print 1st character :
+ we can't use a[0]   -> we have to use a.charAt(0)
+
+
+ To format a float number to two decimal values
+ float val = 123.3455f;  or 1113.3467f ----> 1113.35  ( round off as well)
+ System.out.printf("the value is %.2f ",val);   ---> 123.34
+
+ To print pi value
+ System.out.printf("Pie value is %.3f",Math.PI);   ---> 3.142
+
+ To print name and value  -> %s means String delimiter %s means place holder
+ System.out.printf("My name is %s and I'm good at %s","Cherry","Math"); --> My name is Cherry and I'm good at Math
+
+ Place holders / format specifiers in java:
+ %c - Character
+ %d - Decimal number (base 10)
+ %e - Exponential floating-point number
+ %f - Floating-point number
+ %i - Integer (base 10)
+ %o - Octal number (base 8)
+ %s - String
+ %u - Unsigned decimal (integer) number
+ %x - Hexadecimal number (base 16)
+ %t - Date/time
+ %n - Newline
+
+
+ System.out.println('a' + 'b')       ---> 195 i.e 97 + 98
+ System.out.println("a" + "b")       ---> ab
+ System.out.println("a" + 1 )        ---> a1  i.e 1 will be converted to string so "a" + "1"
+ System.out.println('a' + 1 )        ---> 98  i.e  97 + 1
+ System.out.println((char)('a' + 1)) ---> b i.e 97 + 1 in the char type
+ System.out.println("a" + 'b')       ---> will be ab
+basically --> + operator can be only used if one of them is string
+complex object + string ||  primitive + string ---> object will be convert to string using to  string method in println.
+
+String builder is a type of object where the object can be modified
+Syntax:
+StringBuilder sc = new StringBuilder();
+
+
+String Methods:
+To print a to z
+StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 26; i++) {
+            char ch = (char)('a' + i);
+            builder.append(ch);             here for each iteration new character is added to the same object
+                                            time complexity will be o(n)
+        }
+System.out.println(builder);                      -> abcdefghijklmnopqrstuvwxyz
+System.out.println(builder.reverse());            -> zyxwvutsrqponmlkjihgfedcba
+System.out.println(builder.deleteCharAt(0));      -> yxwvutsrqponmlkjihgfedcba
+System.out.println(builder.append(12));           -> yxwvutsrqponmlkjihgfedcba12
+
+String name = "cherry chethan";
+System.out.println(Arrays.toString(name.toCharArray()));  --> [c, h, e, r, r, y,  , c, h, e, t, h, a, n]
+System.out.println(name.indexOf('e'));                    --> will give me 2
+System.out.println("    cherry  ".strip());               --> cherry
+
+
+
+to print any pattern
+*
+* *
+* * *
+
+three steps :
+1. identify number of lines and that will be number of rows and put it in the outer loop
+2. identify number of columns in each row and types of elements in column
+3. What do you need to print
+4. try finding the formula w.r.t row and col

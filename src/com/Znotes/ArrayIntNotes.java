@@ -1,4 +1,4 @@
-package com.notes;
+package com.Znotes;
 
 public class ArrayIntNotes {
     public static void main(String[] args) {
